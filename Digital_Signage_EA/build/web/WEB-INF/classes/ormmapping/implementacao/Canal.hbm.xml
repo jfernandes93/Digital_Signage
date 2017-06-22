@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: Universidade do Minho
+License Type: Academic
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="implementacao.Canal" table="Canal" lazy="false">
+		<id name="ID" column="ID" type="integer" unsaved-value="0">
+			<generator class="native">
+			</generator>
+		</id>
+		<many-to-one name="cliente" cascade="lock" column="ClienteID" class="implementacao.Cliente" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<property name="Descricao" column="Descricao" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="Nome" column="Nome" type="string" length="255" not-null="false" lazy="false"/>
+		<set name="ORM__conteudo" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="CanalID" not-null="true"/>
+			<one-to-many class="implementacao.Conteudo"/>
+		</set>
+		<one-to-one name="_player" class="implementacao.Player" cascade="save-update,lock" property-ref="_canal" lazy="proxy" access="field"/>
+	</class>
+</hibernate-mapping>

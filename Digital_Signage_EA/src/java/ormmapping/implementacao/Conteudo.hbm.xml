@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: Universidade do Minho
+License Type: Academic
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="implementacao.Conteudo" table="Conteudo" lazy="false">
+		<id name="ID" column="ID" type="integer" unsaved-value="0">
+			<generator class="native">
+			</generator>
+		</id>
+		<many-to-one name="_conteudo" cascade="lock" column="TipoID" class="implementacao.Tipo" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<many-to-one name="_canal" cascade="lock" column="CanalID" class="implementacao.Canal" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
+		<property name="Duracao" column="Duracao" type="time" not-null="false" lazy="false"/>
+		<property name="Reproducoes" column="Reproducoes" type="integer" length="10" not-null="false" lazy="false"/>
+	</class>
+</hibernate-mapping>
