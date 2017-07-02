@@ -20,7 +20,8 @@ import org.hibernate.LockMode;
 import java.util.List;
 import org.orm.PersistentException;
 import org.orm.PersistentSession;
-
+import org.springframework.stereotype.Component;
+@Component
 public class ClienteDAO {
 	public static Cliente loadClienteByORMID(int ID) throws PersistentException {
 		try {

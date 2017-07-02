@@ -16,6 +16,6 @@ import models.Cliente;
 public interface ClienteBeanLocal {
     Cliente getCliente(int id);
     Cliente[]getClientes();
-    String getId();
+    
     void inserirCliente(Cliente c);
 }

@@ -12,6 +12,7 @@ restapi\PlayerController.class
 beans\ClienteBeanLocal.class
 DAO\PlayerDAO.class
 restapi\RedeController.class
+DAO\DigitalSignageFacade.class
 models\Canal.class
 models\Coordenada.class
 DAO\ConteudoDAO.class

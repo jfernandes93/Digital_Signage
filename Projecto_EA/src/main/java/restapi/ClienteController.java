@@ -7,6 +7,7 @@ package restapi;
 
 import models.Cliente;
 import DAO.ClienteDAO;
+import DAO.DigitalSignageFacade;
 import beans.ClienteBeanLocal;
 import org.hibernate.Session;
 import org.orm.PersistentException;
@@ -31,27 +32,24 @@ import org.springframework.web.context.WebApplicationContext;
 @RestController
 @RequestMapping("cliente")
 public class ClienteController {
-    @Autowired
-    private WebApplicationContext context;
+    
     @RequestMapping(value="{id}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public Cliente getCliente(@PathVariable int id) throws PersistentException {
-        ClienteBeanLocal service=getClienteBeanLocal();
+        
 
         
-        return service.getCliente(id);
+        return DigitalSignageFacade.procurarCliente(id);
     }
     @RequestMapping(method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public Cliente[] getAllClientes() throws PersistentException{
-         ClienteBeanLocal service=getClienteBeanLocal();
-    return service.getClientes();}
+    return DigitalSignageFacade.getAllClientes();
+    }
+    
     @RequestMapping(method=RequestMethod.POST)
     public void insertCliente(@RequestBody Cliente c) throws PersistentException{
-        ClienteBeanLocal service=getClienteBeanLocal();
-        service.inserirCliente(c);
         
+        DigitalSignageFacade.inserirCliente(c);
     
     }
-    public ClienteBeanLocal getClienteBeanLocal() {
-        return (ClienteBeanLocal) context.getBean("ClienteBeanLocal");
-    }
+    
 }

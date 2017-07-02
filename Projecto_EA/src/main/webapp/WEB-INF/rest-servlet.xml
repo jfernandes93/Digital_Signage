@@ -10,6 +10,6 @@
      <context:component-scan base-package="restapi" />
     <mvc:annotation-driven />
     <context:annotation-config />
-    <bean id="ClienteBeanLocal" class="beans.ClienteBean" />
+    <bean id="ClienteBean" class="beans.ClienteBean" />
 
 </beans>

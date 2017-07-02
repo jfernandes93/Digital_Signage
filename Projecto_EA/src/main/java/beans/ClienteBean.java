@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Scope;
 @Scope("prototype")
 public class ClienteBean implements ClienteBeanLocal{
     private static PersistentSession session;
-    private int counter;
+    
     private static PersistentSession getSession() {
         if (session == null) {
             try {
@@ -30,9 +30,7 @@ public class ClienteBean implements ClienteBeanLocal{
         }
         return session;
     }
-    public String getId(){
-        return " counter is:"+(++counter);
-    }
+    
     public Cliente getCliente(int id) {
         try {
             return ClienteDAO.getClienteByORMID(getSession(), id);

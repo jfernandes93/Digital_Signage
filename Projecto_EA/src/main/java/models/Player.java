@@ -33,4 +33,46 @@ public class Player {
 	
 	@Column(name="Estado", nullable=true, length=255)	
 	private String Estado;
+
+        public int getID() {
+        return ID;
+        }
+
+        public void setID(int ID) {
+        this.ID = ID;
+        }
+
+        public String getNome() {
+        return Nome;
+        }
+
+    public void setNome(String Nome) {
+        this.Nome = Nome;
+    }
+
+    public String getDescricao() {
+        return Descricao;
+    }
+
+    public void setDescricao(String Descricao) {
+        this.Descricao = Descricao;
+    }
+
+    public double getTamanho() {
+        return Tamanho;
+    }
+
+    public void setTamanho(double Tamanho) {
+        this.Tamanho = Tamanho;
+    }
+
+    public String getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
+    }
+        
+        
 }

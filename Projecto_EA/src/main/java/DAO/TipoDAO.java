@@ -19,6 +19,7 @@ import org.hibernate.LockMode;
 import java.util.List;
 import models.Tipo;
 
+
 public class TipoDAO {
 	public static Tipo loadTipoByORMID(int ID) throws PersistentException {
 		try {

@@ -5,6 +5,7 @@
  */
 package models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,4 +22,36 @@ public class Coordenada {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private int ID;
+    
+    @Column(name = "Latitude", nullable = false)
+    private double Latitude;
+    
+    @Column(name = "Longitude", nullable = false)
+    private double Longitude;
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public double getLatitude() {
+        return Latitude;
+    }
+
+    public void setLatitude(double Latitude) {
+        this.Latitude = Latitude;
+    }
+
+    public double getLongitude() {
+        return Longitude;
+    }
+
+    public void setLongitude(double Longitude) {
+        this.Longitude = Longitude;
+    }
+    
+    
 }
