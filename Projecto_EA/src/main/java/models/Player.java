@@ -38,17 +38,13 @@ public class Player {
 
     @Column(name = "Estado", nullable = true, length = 255)
     private String Estado;
+    
+    @Column(name = "Latitude", nullable = false)
+    private double Latitude;
+    
+    @Column(name = "Longitude", nullable = false)
+    private double Longitude;
 
-    @OneToOne(targetEntity = Coordenada.class, fetch = FetchType.LAZY)
-    private Coordenada coordenada;
-
-    public int getID() {
-        return idPlayer;
-    }
-
-    public void setID(int ID) {
-        this.idPlayer= ID;
-    }
 
     public String getNome() {
         return Nome;
@@ -82,12 +78,30 @@ public class Player {
         this.Estado = Estado;
     }
 
-    public Coordenada getCoordenada() {
-        return coordenada;
+    public int getIdPlayer() {
+        return idPlayer;
     }
 
-    public void setCoordenada(Coordenada coordenada) {
-        this.coordenada = coordenada;
+    public void setIdPlayer(int idPlayer) {
+        this.idPlayer = idPlayer;
     }
+
+    public double getLatitude() {
+        return Latitude;
+    }
+
+    public void setLatitude(double Latitude) {
+        this.Latitude = Latitude;
+    }
+
+    public double getLongitude() {
+        return Longitude;
+    }
+
+    public void setLongitude(double Longitude) {
+        this.Longitude = Longitude;
+    }
+
+    
 
 }

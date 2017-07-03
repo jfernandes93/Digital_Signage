@@ -1,11 +1,14 @@
 controllers\HomeController.class
+beans\DigitalSignagePersistentManager.class
+beans\RedeBeanLocal.class
 DAO\RedeDAO.class
 beans\CanalBeanLocal.class
 DAO\CoordenadaDAO.class
+beans\PlayerBean.class
 models\Rede.class
-DAO\DigitalSignagePersistentManager.class
 models\Player.class
 beans\ClienteBean.class
+beans\RedeBean.class
 DAO\CanalDAO.class
 beans\CanalBean.class
 DAO\TipoDAO.class
@@ -18,6 +21,7 @@ DAO\DigitalSignageFacade.class
 models\Canal.class
 models\Coordenada.class
 DAO\ConteudoDAO.class
+beans\PlayerBeanLocal.class
 restapi\ClienteController.class
 models\Cliente.class
 Teste.class

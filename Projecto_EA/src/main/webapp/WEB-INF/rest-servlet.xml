@@ -17,4 +17,5 @@
 <bean id="ClienteBean" class="beans.ClienteBean" />
 <bean id="CanalBean" class="beans.CanalBean" />
 <bean id="PlayerBean" class="beans.PlayerBean" />
+<bean id="RedeBean" class="beans.RedeBean" />
 </beans>

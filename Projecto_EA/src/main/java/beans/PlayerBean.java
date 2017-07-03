@@ -23,14 +23,13 @@ public class PlayerBean implements PlayerBeanLocal{
     
     
     private static PersistentSession getSession() {
-        if (session == null) {
-            try {
-                session = DigitalSignagePersistentManager.instance().getSession();
-            } catch (PersistentException e) {
-                e.printStackTrace();
-            }
+        
+        try {
+            return DigitalSignagePersistentManager.instance().getSession();
+        } catch (PersistentException ex) {
+            Logger.getLogger(CanalBean.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
         }
-        return session;
     }
     
     @Override

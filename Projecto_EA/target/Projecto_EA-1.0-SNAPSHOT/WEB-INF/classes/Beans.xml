@@ -6,4 +6,5 @@
 ">
 <bean id="ClienteBean" class="beans.ClienteBean" />
 <bean id="CanalBean" class="beans.CanalBean" />
+<bean id="persistentManager" class="beans.DigitalSignagePersistentManager" />
 </beans>

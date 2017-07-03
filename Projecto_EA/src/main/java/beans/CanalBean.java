@@ -21,18 +21,17 @@ import org.springframework.context.annotation.Scope;
  */
 @Scope("prototype")
 public class CanalBean implements CanalBeanLocal {
-    private static PersistentSession session=null;
+    
     
     
     private static PersistentSession getSession() {
-        if (session == null) {
-            try {
-                session = DigitalSignagePersistentManager.instance().getSession();
-            } catch (PersistentException e) {
-                e.printStackTrace();
-            }
+        
+        try {
+            return DigitalSignagePersistentManager.instance().getSession();
+        } catch (PersistentException ex) {
+            Logger.getLogger(CanalBean.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
         }
-        return session;
     }
     
     public Canal getCanal(int id) {
