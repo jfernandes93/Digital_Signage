@@ -5,4 +5,5 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 ">
 <bean id="ClienteBean" class="beans.ClienteBean" />
+<bean id="CanalBean" class="beans.CanalBean" />
 </beans>

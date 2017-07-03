@@ -23,7 +23,7 @@ License Type: Academic
 		<property name="show_sql">false</property>
 		<property name="query.substitutions">true 1, false 0, yes 'Y', no 'N'</property>
 		<!-- mapping files -->
-                <property name="hibernate.hbm2ddl.auto">update</property>
+                <property name="hibernate.hbm2ddl.auto">create</property>
 		<mapping class="models.Cliente" />
 		<mapping class="models.Rede" />
                 <mapping class="models.Conteudo" />

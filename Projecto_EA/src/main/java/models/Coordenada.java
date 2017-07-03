@@ -17,7 +17,7 @@ import javax.persistence.Table;
  * @author joaof
  */
 @Entity
-@Table(name = "coordenadas")
+@Table(name = "coordenada")
 public class Coordenada {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -11,6 +11,8 @@ package controllers;
  */
 import models.Cliente;
 import DAO.ClienteDAO;
+import models.Canal;
+import DAO.CanalDAO;
 import org.orm.PersistentException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -49,6 +51,17 @@ public class HomeController {
         c.setEmail(cliente.getEmail());
         
         ClienteDAO.save(c);
+    }
+    @RequestMapping(value="Canal",method = RequestMethod.POST)
+    public void addcanal(@ModelAttribute("Canal")Canal canal) throws PersistentException{
+        System.out.println("1");
+        Canal c=new Canal();
+        c.setNome(canal.getNome());
+        c.setDescricao(canal.getDescricao());
+        c.setPlayers(canal.getPlayers());
+        c.setConteudos(canal.getConteudos());
+        
+        CanalDAO.save(c);
     }
     
  

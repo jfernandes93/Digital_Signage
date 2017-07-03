@@ -7,6 +7,8 @@ package restapi;
 
 import models.Canal;
 import DAO.CanalDAO;
+import DAO.DigitalSignageFacade;
+import beans.CanalBeanLocal;
 import org.orm.PersistentException;
 
 import org.springframework.http.MediaType;
@@ -26,7 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CanalController {
     
     @RequestMapping(value="{id}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody Canal getCliente(@PathVariable int id) throws PersistentException  {
+    public @ResponseBody Canal getCanal(@PathVariable int id) throws PersistentException  {
         return CanalDAO.getCanalByORMID(id);
     }
     
@@ -36,8 +38,8 @@ public class CanalController {
     }
     @RequestMapping(method=RequestMethod.POST)
     public void insertCanal(@RequestBody Canal c) throws PersistentException {
-        CanalDAO.save(c);
-    
+        //CanalDAO.save(c);
+        DigitalSignageFacade.inserirCanal(c);
     }
     
 }

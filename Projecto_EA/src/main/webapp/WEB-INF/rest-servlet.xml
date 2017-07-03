@@ -11,5 +11,6 @@
     <mvc:annotation-driven />
     <context:annotation-config />
     <bean id="ClienteBean" class="beans.ClienteBean" />
+    <bean id="CanalBean" class="beans.CanalBean" />
 
 </beans>
