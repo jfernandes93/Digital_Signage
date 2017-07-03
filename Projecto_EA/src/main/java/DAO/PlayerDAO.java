@@ -22,7 +22,7 @@ import java.util.List;
 public class PlayerDAO {
 	public static Player loadPlayerByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadPlayerByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -33,7 +33,7 @@ public class PlayerDAO {
 	
 	public static Player getPlayerByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return getPlayerByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -44,7 +44,7 @@ public class PlayerDAO {
 	
 	public static Player loadPlayerByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadPlayerByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -55,7 +55,7 @@ public class PlayerDAO {
 	
 	public static Player getPlayerByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return getPlayerByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -106,7 +106,7 @@ public class PlayerDAO {
 	
 	public static List queryPlayer(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return queryPlayer(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -117,7 +117,7 @@ public class PlayerDAO {
 	
 	public static List queryPlayer(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return queryPlayer(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -128,7 +128,7 @@ public class PlayerDAO {
 	
 	public static Player[] listPlayerByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return listPlayerByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -139,7 +139,7 @@ public class PlayerDAO {
 	
 	public static Player[] listPlayerByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return listPlayerByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -205,7 +205,7 @@ public class PlayerDAO {
 	
 	public static Player loadPlayerByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadPlayerByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -216,7 +216,7 @@ public class PlayerDAO {
 	
 	public static Player loadPlayerByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadPlayerByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -243,7 +243,7 @@ public class PlayerDAO {
 	
 	public static java.util.Iterator iteratePlayerByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return iteratePlayerByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -254,7 +254,7 @@ public class PlayerDAO {
 	
 	public static java.util.Iterator iteratePlayerByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return iteratePlayerByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -302,7 +302,7 @@ public class PlayerDAO {
 	
 	public static boolean save(Player player) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().saveObject(player);
+			beans.DigitalSignagePersistentManager.instance().saveObject(player);
 			return true;
 		}
 		catch (Exception e) {
@@ -314,7 +314,7 @@ public class PlayerDAO {
 	public static boolean delete(Player player) throws PersistentException {
 		
 		try {
-			DAO.DigitalSignagePersistentManager.instance().deleteObject(player);
+			beans.DigitalSignagePersistentManager.instance().deleteObject(player);
 			return true;
 		}
 		catch (Exception e) {
@@ -329,7 +329,7 @@ public class PlayerDAO {
 	public static boolean refresh(Player player) throws PersistentException {
 		
 		try {
-			DAO.DigitalSignagePersistentManager.instance().getSession().refresh(player);
+			beans.DigitalSignagePersistentManager.instance().getSession().refresh(player);
 			return true;
 		}
 		catch (Exception e) {
@@ -340,7 +340,7 @@ public class PlayerDAO {
 	
 	public static boolean evict(Player player) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().getSession().evict(player);
+			beans.DigitalSignagePersistentManager.instance().getSession().evict(player);
 			return true;
 		}
 		catch (Exception e) {

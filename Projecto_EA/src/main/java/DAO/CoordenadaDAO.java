@@ -22,7 +22,7 @@ import java.util.List;
 public class CoordenadaDAO {
 	public static Coordenada loadCoordenadaByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadCoordenadaByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -33,7 +33,7 @@ public class CoordenadaDAO {
 	
 	public static Coordenada getCoordenadaByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return getCoordenadaByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -44,7 +44,7 @@ public class CoordenadaDAO {
 	
 	public static Coordenada loadCoordenadaByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadCoordenadaByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -55,7 +55,7 @@ public class CoordenadaDAO {
 	
 	public static Coordenada getCoordenadaByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return getCoordenadaByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -106,7 +106,7 @@ public class CoordenadaDAO {
 	
 	public static List queryCoordenada(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return queryCoordenada(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -117,7 +117,7 @@ public class CoordenadaDAO {
 	
 	public static List queryCoordenada(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return queryCoordenada(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -128,7 +128,7 @@ public class CoordenadaDAO {
 	
 	public static Coordenada[] listCoordenadaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return listCoordenadaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -139,7 +139,7 @@ public class CoordenadaDAO {
 	
 	public static Coordenada[] listCoordenadaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return listCoordenadaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -205,7 +205,7 @@ public class CoordenadaDAO {
 	
 	public static Coordenada loadCoordenadaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadCoordenadaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -216,7 +216,7 @@ public class CoordenadaDAO {
 	
 	public static Coordenada loadCoordenadaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadCoordenadaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -243,7 +243,7 @@ public class CoordenadaDAO {
 	
 	public static java.util.Iterator iterateCoordenadaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return iterateCoordenadaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -254,7 +254,7 @@ public class CoordenadaDAO {
 	
 	public static java.util.Iterator iterateCoordenadaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return iterateCoordenadaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -302,7 +302,7 @@ public class CoordenadaDAO {
 	
 	public static boolean save(Coordenada coordenada) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().saveObject(coordenada);
+			beans.DigitalSignagePersistentManager.instance().saveObject(coordenada);
 			return true;
 		}
 		catch (Exception e) {
@@ -313,7 +313,7 @@ public class CoordenadaDAO {
 	
 	public static boolean delete(Coordenada coordenada) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().deleteObject(coordenada);
+			beans.DigitalSignagePersistentManager.instance().deleteObject(coordenada);
 			return true;
 		}
 		catch (Exception e) {
@@ -326,7 +326,7 @@ public class CoordenadaDAO {
 	public static boolean refresh(Coordenada coordenada)throws PersistentException {
 		
 		try {
-			DAO.DigitalSignagePersistentManager.instance().getSession().refresh(coordenada);
+			beans.DigitalSignagePersistentManager.instance().getSession().refresh(coordenada);
 			return true;
 		}
 		catch (Exception e) {
@@ -338,7 +338,7 @@ public class CoordenadaDAO {
 	public static boolean evict(Coordenada coordenada)throws PersistentException {
 		
 		try {
-			DAO.DigitalSignagePersistentManager.instance().getSession().evict(coordenada);
+			beans.DigitalSignagePersistentManager.instance().getSession().evict(coordenada);
 			return true;
 		}
 		catch (Exception e) {

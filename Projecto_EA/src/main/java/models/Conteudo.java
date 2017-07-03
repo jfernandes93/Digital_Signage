@@ -5,6 +5,7 @@
  */
 package models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,6 +21,15 @@ import javax.persistence.Table;
 public class Conteudo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private int ID;
+    @Column(name="idConteudo")
+	private int idConteudo;
+
+    public int getIdConteudo() {
+        return idConteudo;
+    }
+
+    public void setIdConteudo(int idConteudo) {
+        this.idConteudo = idConteudo;
+    }
     
 }

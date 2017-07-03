@@ -21,7 +21,7 @@ public class Canal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int ID;
+    private int idCanal;
 
     @Column(name = "Descricao", nullable = true, length = 255)
     private String Descricao;
@@ -48,11 +48,11 @@ public class Canal {
         this.players=new HashSet<>();
     }
     public int getID() {
-        return ID;
+        return idCanal;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.idCanal = ID;
     }
 
     public String getDescricao() {

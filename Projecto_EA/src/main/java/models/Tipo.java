@@ -24,7 +24,8 @@ import javax.persistence.Table;
 public class Tipo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private int ID;
+    @Column(name="idTipo")
+	private int idTipo;
     
     @Column(name = "Descricao", nullable = true, length = 10)
     private int Descricao;
@@ -35,11 +36,11 @@ public class Tipo {
     private Set<Conteudo> conteudos;
 
     public int getID() {
-        return ID;
+        return idTipo;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.idTipo = ID;
     }
 
     public int getDescricao() {

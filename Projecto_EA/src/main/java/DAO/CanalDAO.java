@@ -19,10 +19,11 @@ import org.hibernate.Query;
 import org.hibernate.LockMode;
 import java.util.List;
 
+
 public class CanalDAO {
 	public static Canal loadCanalByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadCanalByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -33,7 +34,7 @@ public class CanalDAO {
 	
 	public static Canal getCanalByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return getCanalByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -44,7 +45,7 @@ public class CanalDAO {
 	
 	public static Canal loadCanalByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadCanalByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -55,7 +56,7 @@ public class CanalDAO {
 	
 	public static Canal getCanalByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return getCanalByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -106,7 +107,7 @@ public class CanalDAO {
 	
 	public static List queryCanal(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return queryCanal(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -117,7 +118,7 @@ public class CanalDAO {
 	
 	public static List queryCanal(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return queryCanal(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -128,7 +129,7 @@ public class CanalDAO {
 	
 	public static Canal[] listCanalByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return listCanalByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -139,7 +140,7 @@ public class CanalDAO {
 	
 	public static Canal[] listCanalByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return listCanalByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -205,7 +206,7 @@ public class CanalDAO {
 	
 	public static Canal loadCanalByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadCanalByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -216,7 +217,7 @@ public class CanalDAO {
 	
 	public static Canal loadCanalByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadCanalByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -243,7 +244,7 @@ public class CanalDAO {
 	
 	public static java.util.Iterator iterateCanalByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return iterateCanalByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -254,7 +255,7 @@ public class CanalDAO {
 	
 	public static java.util.Iterator iterateCanalByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return iterateCanalByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -302,7 +303,7 @@ public class CanalDAO {
 	
 	public static boolean save(models.Canal canal) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().saveObject(canal);
+			beans.DigitalSignagePersistentManager.instance().saveObject(canal);
 			return true;
 		}
 		catch (Exception e) {
@@ -313,7 +314,7 @@ public class CanalDAO {
 	
 	public static boolean delete(models.Canal canal) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().deleteObject(canal);
+			beans.DigitalSignagePersistentManager.instance().deleteObject(canal);
 			return true;
 		}
 		catch (Exception e) {
@@ -326,7 +327,7 @@ public class CanalDAO {
 	
 	public static boolean refresh(models.Canal canal) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().getSession().refresh(canal);
+			beans.DigitalSignagePersistentManager.instance().getSession().refresh(canal);
 			return true;
 		}
 		catch (Exception e) {
@@ -337,7 +338,7 @@ public class CanalDAO {
 	
 	public static boolean evict(models.Canal canal) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().getSession().evict(canal);
+			beans.DigitalSignagePersistentManager.instance().getSession().evict(canal);
 			return true;
 		}
 		catch (Exception e) {

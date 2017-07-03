@@ -9,8 +9,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import models.Cliente;
+import org.hibernate.Session;
 import org.orm.PersistentException;
+import org.orm.PersistentManager;
 import org.orm.PersistentSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 /**
  *
@@ -18,22 +21,23 @@ import org.springframework.context.annotation.Scope;
  */
 @Scope("prototype")
 public class ClienteBean implements ClienteBeanLocal{
-    private static PersistentSession session;
     
-    private static PersistentSession getSession() {
-        if (session == null) {
-            try {
-                session = DAO.DigitalSignagePersistentManager.instance().getSession();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return session;
+    
+    
+    
+    private static PersistentSession getSession() throws PersistentException {
+        
+        return DigitalSignagePersistentManager.instance().getSession();
     }
+    
+    
     
     public Cliente getCliente(int id) {
         try {
-            return ClienteDAO.getClienteByORMID(getSession(), id);
+            
+            Cliente cli= ClienteDAO.getClienteByORMID(getSession(), id);
+            
+            return cli;
         } catch (PersistentException ex) {
             Logger.getLogger(ClienteBean.class.getName()).log(Level.SEVERE, null, ex);
             return null;

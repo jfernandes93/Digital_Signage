@@ -33,23 +33,26 @@ import org.springframework.web.context.WebApplicationContext;
 @RequestMapping("cliente")
 public class ClienteController {
     
+    @Autowired
+    private DigitalSignageFacade facade;
     @RequestMapping(value="{id}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public Cliente getCliente(@PathVariable int id) throws PersistentException {
         
 
         
-        return DigitalSignageFacade.procurarCliente(id);
+        return facade.procurarCliente(id);
     }
     @RequestMapping(method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public Cliente[] getAllClientes() throws PersistentException{
-    return DigitalSignageFacade.getAllClientes();
+    return facade.getAllClientes();
     }
     
     @RequestMapping(method=RequestMethod.POST)
     public void insertCliente(@RequestBody Cliente c) throws PersistentException{
         
-        DigitalSignageFacade.inserirCliente(c);
+        facade.inserirCliente(c);
     
     }
+    
     
 }

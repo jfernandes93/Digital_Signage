@@ -23,7 +23,7 @@ import models.Tipo;
 public class TipoDAO {
 	public static Tipo loadTipoByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadTipoByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -34,7 +34,7 @@ public class TipoDAO {
 	
 	public static Tipo getTipoByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return getTipoByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -45,7 +45,7 @@ public class TipoDAO {
 	
 	public static Tipo loadTipoByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadTipoByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -56,7 +56,7 @@ public class TipoDAO {
 	
 	public static Tipo getTipoByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return getTipoByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -107,7 +107,7 @@ public class TipoDAO {
 	
 	public static List queryTipo(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return queryTipo(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -118,7 +118,7 @@ public class TipoDAO {
 	
 	public static List queryTipo(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return queryTipo(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -129,7 +129,7 @@ public class TipoDAO {
 	
 	public static Tipo[] listTipoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return listTipoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -140,7 +140,7 @@ public class TipoDAO {
 	
 	public static Tipo[] listTipoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return listTipoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -206,7 +206,7 @@ public class TipoDAO {
 	
 	public static Tipo loadTipoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadTipoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -217,7 +217,7 @@ public class TipoDAO {
 	
 	public static Tipo loadTipoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadTipoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -244,7 +244,7 @@ public class TipoDAO {
 	
 	public static java.util.Iterator iterateTipoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return iterateTipoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -255,7 +255,7 @@ public class TipoDAO {
 	
 	public static java.util.Iterator iterateTipoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return iterateTipoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -303,7 +303,7 @@ public class TipoDAO {
 	
 	public static boolean save(Tipo tipo) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().saveObject(tipo);
+			beans.DigitalSignagePersistentManager.instance().saveObject(tipo);
 			return true;
 		}
 		catch (Exception e) {
@@ -314,7 +314,7 @@ public class TipoDAO {
 	
 	public static boolean delete(Tipo tipo) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().deleteObject(tipo);
+			beans.DigitalSignagePersistentManager.instance().deleteObject(tipo);
 			return true;
 		}
 		catch (Exception e) {
@@ -327,7 +327,7 @@ public class TipoDAO {
 	
 	public static boolean refresh(Tipo tipo) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().getSession().refresh(tipo);
+			beans.DigitalSignagePersistentManager.instance().getSession().refresh(tipo);
 			return true;
 		}
 		catch (Exception e) {
@@ -338,7 +338,7 @@ public class TipoDAO {
 	
 	public static boolean evict(Tipo tipo) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().getSession().evict(tipo);
+			beans.DigitalSignagePersistentManager.instance().getSession().evict(tipo);
 			return true;
 		}
 		catch (Exception e) {

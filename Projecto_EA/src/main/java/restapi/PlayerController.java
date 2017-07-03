@@ -9,11 +9,13 @@ import models.Canal;
 import DAO.CanalDAO;
 import models.Cliente;
 import DAO.ClienteDAO;
+import DAO.DigitalSignageFacade;
 import models.Player;
 import DAO.PlayerDAO;
 import models.Rede;
 import DAO.RedeDAO;
 import org.orm.PersistentException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,19 +31,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("player")
 public class PlayerController {
-    
+    @Autowired
+    private DigitalSignageFacade facade;
     @RequestMapping(value="{id}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody Player getPlayer(@PathVariable int id) throws PersistentException{
-        return PlayerDAO.getPlayerByORMID(id);
+        return facade.procurarPlayer(id);
     }
     
     @RequestMapping(method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody Player[] getAllPlayers() throws PersistentException  {
-        return PlayerDAO.listPlayerByQuery(null, null);
+        return facade.getAllPlayers();
     }
     @RequestMapping(method=RequestMethod.POST)
     public void insertPlayer(@RequestBody Player p) throws PersistentException {
-        PlayerDAO.save(p);
+        facade.inserirPlayer(p);
     
     }
     

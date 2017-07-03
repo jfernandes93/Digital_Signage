@@ -14,6 +14,7 @@
 package DAO;
 
 
+import beans.DigitalSignagePersistentManager;
 import models.Cliente;
 import org.hibernate.Query;
 import org.hibernate.LockMode;
@@ -21,11 +22,11 @@ import java.util.List;
 import org.orm.PersistentException;
 import org.orm.PersistentSession;
 import org.springframework.stereotype.Component;
-@Component
+
 public class ClienteDAO {
 	public static Cliente loadClienteByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadClienteByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -36,7 +37,7 @@ public class ClienteDAO {
 	
 	public static Cliente getClienteByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = DigitalSignagePersistentManager.instance().getSession();
 			return getClienteByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -47,7 +48,7 @@ public class ClienteDAO {
 	
 	public static Cliente loadClienteByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = DigitalSignagePersistentManager.instance().getSession();
 			return loadClienteByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -58,7 +59,7 @@ public class ClienteDAO {
 	
 	public static Cliente getClienteByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return getClienteByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -109,7 +110,7 @@ public class ClienteDAO {
 	
 	public static List queryCliente(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return queryCliente(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -120,7 +121,7 @@ public class ClienteDAO {
 	
 	public static List queryCliente(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return queryCliente(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -131,7 +132,7 @@ public class ClienteDAO {
 	
 	public static Cliente[] listClienteByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return listClienteByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -142,7 +143,7 @@ public class ClienteDAO {
 	
 	public static Cliente[] listClienteByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return listClienteByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -208,7 +209,7 @@ public class ClienteDAO {
 	
 	public static Cliente loadClienteByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadClienteByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -219,7 +220,7 @@ public class ClienteDAO {
 	
 	public static Cliente loadClienteByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadClienteByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -246,7 +247,7 @@ public class ClienteDAO {
 	
 	public static java.util.Iterator iterateClienteByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return iterateClienteByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -257,7 +258,7 @@ public class ClienteDAO {
 	
 	public static java.util.Iterator iterateClienteByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return iterateClienteByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -305,7 +306,7 @@ public class ClienteDAO {
 	
 	public static boolean save(Cliente cliente) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().saveObject(cliente);
+			beans.DigitalSignagePersistentManager.instance().saveObject(cliente);
 			return true;
 		}
 		catch (Exception e) {
@@ -317,7 +318,7 @@ public class ClienteDAO {
 	public static boolean delete(Cliente cliente)throws PersistentException {
 		
 		try {
-			DAO.DigitalSignagePersistentManager.instance().deleteObject(cliente);
+			beans.DigitalSignagePersistentManager.instance().deleteObject(cliente);
 			return true;
 		}
 		catch (Exception e) {
@@ -331,7 +332,7 @@ public class ClienteDAO {
 	public static boolean refresh(Cliente cliente)throws PersistentException {
 		
 		try {
-			DAO.DigitalSignagePersistentManager.instance().getSession().refresh(cliente);
+			beans.DigitalSignagePersistentManager.instance().getSession().refresh(cliente);
 			return true;
 		}
 		catch (Exception e) {
@@ -342,7 +343,7 @@ public class ClienteDAO {
 	
 	public static boolean evict(Cliente cliente) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().getSession().evict(cliente);
+			beans.DigitalSignagePersistentManager.instance().getSession().evict(cliente);
 			return true;
 		}
 		catch (Exception e) {

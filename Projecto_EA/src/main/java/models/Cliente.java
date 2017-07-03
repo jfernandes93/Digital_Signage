@@ -22,7 +22,8 @@ public class Cliente {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private int ID;
+    @Column(name="idCliente")	
+    private int idCliente;
 
     @Column(name = "Nome", nullable = true, length = 255)
     private String Nome;
@@ -37,13 +38,13 @@ public class Cliente {
     private String Password;
     
     @OneToMany	
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.ALL, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
     @JoinColumn(name="ClienteID")
     private Set<Rede> redes;
     
     @OneToMany	
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.ALL, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
     @JoinColumn(name="ClienteID")
     private Set<Canal> canais;
@@ -57,14 +58,14 @@ public class Cliente {
      * @return the ID
      */
     public int getID() {
-        return ID;
+        return idCliente;
     }
 
     /**
      * @param ID the ID to set
      */
     public void setID(int ID) {
-        this.ID = ID;
+        this.idCliente = ID;
     }
 
     /**

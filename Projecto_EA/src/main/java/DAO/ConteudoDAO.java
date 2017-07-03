@@ -22,7 +22,7 @@ import java.util.List;
 public class ConteudoDAO {
 	public static Conteudo loadConteudoByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadConteudoByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -33,7 +33,7 @@ public class ConteudoDAO {
 	
 	public static Conteudo getConteudoByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return getConteudoByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -44,7 +44,7 @@ public class ConteudoDAO {
 	
 	public static Conteudo loadConteudoByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadConteudoByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -55,7 +55,7 @@ public class ConteudoDAO {
 	
 	public static Conteudo getConteudoByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return getConteudoByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -106,7 +106,7 @@ public class ConteudoDAO {
 	
 	public static List queryConteudo(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return queryConteudo(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -117,7 +117,7 @@ public class ConteudoDAO {
 	
 	public static List queryConteudo(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return queryConteudo(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -128,7 +128,7 @@ public class ConteudoDAO {
 	
 	public static Conteudo[] listConteudoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return listConteudoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -139,7 +139,7 @@ public class ConteudoDAO {
 	
 	public static Conteudo[] listConteudoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return listConteudoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -205,7 +205,7 @@ public class ConteudoDAO {
 	
 	public static Conteudo loadConteudoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadConteudoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -216,7 +216,7 @@ public class ConteudoDAO {
 	
 	public static Conteudo loadConteudoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadConteudoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -243,7 +243,7 @@ public class ConteudoDAO {
 	
 	public static java.util.Iterator iterateConteudoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return iterateConteudoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -254,7 +254,7 @@ public class ConteudoDAO {
 	
 	public static java.util.Iterator iterateConteudoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return iterateConteudoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -302,7 +302,7 @@ public class ConteudoDAO {
 	
 	public static boolean save(Conteudo conteudo) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().saveObject(conteudo);
+			beans.DigitalSignagePersistentManager.instance().saveObject(conteudo);
 			return true;
 		}
 		catch (Exception e) {
@@ -313,7 +313,7 @@ public class ConteudoDAO {
 	
 	public static boolean delete(Conteudo conteudo) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().deleteObject(conteudo);
+			beans.DigitalSignagePersistentManager.instance().deleteObject(conteudo);
 			return true;
 		}
 		catch (Exception e) {
@@ -327,7 +327,7 @@ public class ConteudoDAO {
 	public static boolean refresh(Conteudo conteudo)throws PersistentException {
 		
 		try {
-			DAO.DigitalSignagePersistentManager.instance().getSession().refresh(conteudo);
+			beans.DigitalSignagePersistentManager.instance().getSession().refresh(conteudo);
 			return true;
 		}
 		catch (Exception e) {
@@ -338,7 +338,7 @@ public class ConteudoDAO {
 	
 	public static boolean evict(Conteudo conteudo) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().getSession().evict(conteudo);
+			beans.DigitalSignagePersistentManager.instance().getSession().evict(conteudo);
 			return true;
 		}
 		catch (Exception e) {

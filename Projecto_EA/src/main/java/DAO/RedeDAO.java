@@ -22,7 +22,7 @@ import java.util.List;
 public class RedeDAO {
 	public static Rede loadRedeByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadRedeByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -33,7 +33,7 @@ public class RedeDAO {
 	
 	public static Rede getRedeByORMID(int ID) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return getRedeByORMID(session, ID);
 		}
 		catch (Exception e) {
@@ -44,7 +44,7 @@ public class RedeDAO {
 	
 	public static Rede loadRedeByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadRedeByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -55,7 +55,7 @@ public class RedeDAO {
 	
 	public static Rede getRedeByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return getRedeByORMID(session, ID, lockMode);
 		}
 		catch (Exception e) {
@@ -106,7 +106,7 @@ public class RedeDAO {
 	
 	public static List queryRede(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return queryRede(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -117,7 +117,7 @@ public class RedeDAO {
 	
 	public static List queryRede(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return queryRede(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -128,7 +128,7 @@ public class RedeDAO {
 	
 	public static Rede[] listRedeByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return listRedeByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -139,7 +139,7 @@ public class RedeDAO {
 	
 	public static Rede[] listRedeByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return listRedeByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -205,7 +205,7 @@ public class RedeDAO {
 	
 	public static Rede loadRedeByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadRedeByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -216,7 +216,7 @@ public class RedeDAO {
 	
 	public static Rede loadRedeByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return loadRedeByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -243,7 +243,7 @@ public class RedeDAO {
 	
 	public static java.util.Iterator iterateRedeByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return iterateRedeByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -254,7 +254,7 @@ public class RedeDAO {
 	
 	public static java.util.Iterator iterateRedeByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = DAO.DigitalSignagePersistentManager.instance().getSession();
+			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
 			return iterateRedeByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -303,7 +303,7 @@ public class RedeDAO {
 	public static boolean save(Rede rede)throws PersistentException {
 		
 		try {
-			DAO.DigitalSignagePersistentManager.instance().saveObject(rede);
+			beans.DigitalSignagePersistentManager.instance().saveObject(rede);
 			return true;
 		}
 		catch (Exception e) {
@@ -315,7 +315,7 @@ public class RedeDAO {
 	public static boolean delete(Rede rede) throws PersistentException {
 		
 		try {
-			DAO.DigitalSignagePersistentManager.instance().deleteObject(rede);
+			beans.DigitalSignagePersistentManager.instance().deleteObject(rede);
 			return true;
 		}
 		catch (Exception e) {
@@ -328,7 +328,7 @@ public class RedeDAO {
 	
 	public static boolean refresh(Rede rede) throws PersistentException {
 		try {
-			DAO.DigitalSignagePersistentManager.instance().getSession().refresh(rede);
+			beans.DigitalSignagePersistentManager.instance().getSession().refresh(rede);
 			return true;
 		}
 		catch (Exception e) {
@@ -339,7 +339,7 @@ public class RedeDAO {
 	
 	public static boolean evict(Rede rede) throws PersistentException{
 		try {
-			DAO.DigitalSignagePersistentManager.instance().getSession().evict(rede);
+			beans.DigitalSignagePersistentManager.instance().getSession().evict(rede);
 			return true;
 		}
 		catch (Exception e) {

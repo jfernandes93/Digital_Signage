@@ -7,56 +7,65 @@ package DAO;
 
 import beans.ClienteBeanLocal;
 import beans.CanalBeanLocal;
+import beans.PlayerBeanLocal;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import models.Cliente;
 import models.Canal;
 import models.Player;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
  *
  * @author joaof
  */
+@Scope("prototype")
 public class DigitalSignageFacade {
-     static ClienteBeanLocal clientBean = lookupClienteBeanLocal();
+    @Autowired
+    private ClienteBeanLocal clientBean;
+    
+   @Autowired
+private CanalBeanLocal canalBean;
+    
+   @Autowired
+   private PlayerBeanLocal playerBean;
 
-    private static ClienteBeanLocal lookupClienteBeanLocal() {
-        
-        ApplicationContext context=new ClassPathXmlApplicationContext("Beans.xml");
-        return (ClienteBeanLocal) context.getBean("ClienteBean");
-        
-    }
-    public static Cliente procurarCliente(int id){
+    public Cliente procurarCliente(int id){
+       
         return clientBean.getCliente(id);
     }
-    public static Cliente[] getAllClientes(){
+    public Cliente[] getAllClientes(){
         return clientBean.getClientes();
     }
-    public static void inserirCliente(Cliente c){
+    public void inserirCliente(Cliente c){
         clientBean.inserirCliente(c);
     }
     
-    static CanalBeanLocal canalBean = lookupCanalBeanLocal();
 
-    private static CanalBeanLocal lookupCanalBeanLocal() {
-        
-        ApplicationContext context=new ClassPathXmlApplicationContext("Beans.xml");
-        return (CanalBeanLocal) context.getBean("CanalBean");
-        
-    }
-    public static Canal procurarCanal(int id){
+    public Canal procurarCanal(int id){
         return canalBean.getCanal(id);
     }
-    public static Canal[] getAllCanais(){
+    public Canal[] getAllCanais(){
         return canalBean.getCanais();
     }
-    public static Player[] getAllPlayers(){
+    public Player[] getAllPlayers(){
         return canalBean.getPlayers();
     }
-    public static void inserirCanal(Canal c){
+    public void inserirCanal(Canal c){
         canalBean.inserirCanal(c);
+    }
+
+    public void inserirPlayer(Player p) {
+        playerBean.inserirPlayer(p);
+    }
+
+    public Player procurarPlayer(int id) {
+        return playerBean.getPlayer(id);
     }
 }

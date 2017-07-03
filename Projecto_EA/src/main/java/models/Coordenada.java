@@ -21,7 +21,8 @@ import javax.persistence.Table;
 public class Coordenada {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private int ID;
+    @Column(name="idCoordenada")
+	private int idCoordenada;
     
     @Column(name = "Latitude", nullable = false)
     private double Latitude;
@@ -30,11 +31,11 @@ public class Coordenada {
     private double Longitude;
 
     public int getID() {
-        return ID;
+        return idCoordenada;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.idCoordenada = ID;
     }
 
     public double getLatitude() {

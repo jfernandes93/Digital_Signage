@@ -10,6 +10,7 @@ import DAO.CanalDAO;
 import DAO.DigitalSignageFacade;
 import beans.CanalBeanLocal;
 import org.orm.PersistentException;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,20 +27,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("canal")
 public class CanalController {
-    
+    @Autowired
+    private DigitalSignageFacade facade;
     @RequestMapping(value="{id}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody Canal getCanal(@PathVariable int id) throws PersistentException  {
-        return CanalDAO.getCanalByORMID(id);
+        return facade.procurarCanal(id);
     }
     
     @RequestMapping(method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody Canal[] getAllCanais() throws PersistentException {
-        return CanalDAO.listCanalByQuery(null, null);
+        return facade.getAllCanais();
     }
     @RequestMapping(method=RequestMethod.POST)
     public void insertCanal(@RequestBody Canal c) throws PersistentException {
         //CanalDAO.save(c);
-        DigitalSignageFacade.inserirCanal(c);
+        facade.inserirCanal(c);
     }
     
 }

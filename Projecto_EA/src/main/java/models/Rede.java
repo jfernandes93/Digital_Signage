@@ -19,7 +19,8 @@ import javax.persistence.*;
 public class Rede {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	private int ID;
+    @Column(name="idRede")
+	private int idRede;
 	
 	
 	@Column(name="Descricao", nullable=true, length=255)	
@@ -29,7 +30,7 @@ public class Rede {
 	private String Nome;
 	
         @OneToMany	
-	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
+	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.ALL, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
     @JoinColumn(name="RedeID")
     private Set<Player> players;
@@ -39,11 +40,11 @@ public class Rede {
     }
     
     public int getID() {
-        return ID;
+        return idRede;
     }
 
     public void setID(int ID) {
-        this.ID = ID;
+        this.idRede= ID;
     }
 
 
