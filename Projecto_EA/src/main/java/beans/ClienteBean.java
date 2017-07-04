@@ -54,6 +54,7 @@ public class ClienteBean implements ClienteBeanLocal{
     @Override
     public void inserirCliente(Cliente c){
         try {
+
             ClienteDAO.save(c);
         } catch (PersistentException ex) {
             Logger.getLogger(ClienteBean.class.getName()).log(Level.SEVERE, null, ex);

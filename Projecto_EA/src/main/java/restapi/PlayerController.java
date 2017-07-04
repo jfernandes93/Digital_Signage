@@ -29,9 +29,10 @@ public class PlayerController {
     @Autowired
     private DigitalSignageFacade facade;
     @CrossOrigin
-    @RequestMapping(value="{id}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody Player getPlayer(@PathVariable int id) throws PersistentException{
-        return facade.procurarPlayer(id);
+    @RequestMapping(value="/login/{name}/{password}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody Canal validatePlayer(@PathVariable String name,@PathVariable String password) throws Exception{
+        Canal c=facade.validarPlayer(name,password);
+        return c;
     }
     @CrossOrigin
     @RequestMapping(method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
@@ -44,5 +45,13 @@ public class PlayerController {
         facade.inserirPlayer(p);
     
     }
+    @CrossOrigin
+    @RequestMapping(value="/{id}",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody Player getPlayer(@PathVariable int id) throws PersistentException{
+        return facade.procurarPlayer(id);
+    }
+
+
+
     
 }

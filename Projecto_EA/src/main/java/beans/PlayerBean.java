@@ -6,6 +6,8 @@
 package beans;
 
 import DAO.PlayerDAO;
+
+import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import models.Player;
@@ -33,11 +35,25 @@ public class PlayerBean implements PlayerBeanLocal{
     }
     
     @Override
-    public Player getPlayer(int id) {
+    public Player validatePlayer(String name,String password) {
         try {
-            return PlayerDAO.getPlayerByORMID(getSession(), id);
-        } catch (PersistentException ex) {
-            Logger.getLogger(PlayerBean.class.getName()).log(Level.SEVERE, null, ex);
+
+           Player p=PlayerDAO.getPlayerByName(getSession(),name,password);
+
+            p.setEstado("ON");
+            PlayerDAO.save(p);
+            return p;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return null;
+        }
+    }
+
+    public Player getPlayer(int id){
+        try {
+            return PlayerDAO.getPlayerByORMID(id);
+        } catch (PersistentException e) {
+            e.printStackTrace();
             return null;
         }
     }

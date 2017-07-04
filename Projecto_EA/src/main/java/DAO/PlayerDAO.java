@@ -14,6 +14,8 @@
 package DAO;
 
 import models.Player;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 import org.orm.*;
 import org.hibernate.Query;
 import org.hibernate.LockMode;
@@ -52,7 +54,7 @@ public class PlayerDAO {
 			throw new PersistentException(e);
 		}
 	}
-	
+
 	public static Player getPlayerByORMID(int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = beans.DigitalSignagePersistentManager.instance().getSession();
@@ -76,13 +78,14 @@ public class PlayerDAO {
 	
 	public static Player getPlayerByORMID(PersistentSession session, int ID) throws PersistentException {
 		try {
-			return (Player)session.get(Player.class, new Integer(ID));
+			return (Player)session.get(Player.class,new Integer(ID));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 			throw new PersistentException(e);
 		}
 	}
+
 	
 	public static Player loadPlayerByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
@@ -93,7 +96,20 @@ public class PlayerDAO {
 			throw new PersistentException(e);
 		}
 	}
-	
+
+	public static Player getPlayerByName(PersistentSession session,String name,String pass) throws NullPointerException {
+		try {
+			Criteria c = session.createCriteria(Player.class);
+			c.add(Restrictions.eq("Nome", name)).add(Restrictions.eq("Password", pass));
+			Player p = (Player) c.uniqueResult();
+			return p;
+		}catch (Exception e){
+			e.printStackTrace();
+			return null;
+
+		}
+	}
+
 	public static Player getPlayerByORMID(PersistentSession session, int ID, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (Player) session.get(Player.class, new Integer(ID), lockMode);

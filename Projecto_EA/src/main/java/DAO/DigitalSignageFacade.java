@@ -76,7 +76,16 @@ public class DigitalSignageFacade {
         playerBean.inserirPlayer(p);
     }
 
-    public Player procurarPlayer(int id) {
+    public Canal validarPlayer(String nome,String password) {
+        try{
+            Player p= playerBean.validatePlayer(nome,password);
+            return p.getCanal();
+        }catch(NullPointerException ex){
+            ex.printStackTrace();
+            return null;
+        }
+    }
+    public Player procurarPlayer(int id){
         return playerBean.getPlayer(id);
     }
 

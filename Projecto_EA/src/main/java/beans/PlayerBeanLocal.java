@@ -12,8 +12,8 @@ import models.Player;
  * @author joaof
  */
 public interface PlayerBeanLocal {
-    Player getPlayer(int id);
+    Player validatePlayer(String name,String password);
     Player[]getPlayers();
-    
+    Player getPlayer(int id);
     void inserirPlayer(Player p);
 }

@@ -3,16 +3,6 @@
     <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="Projecto_EA-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="Projecto_EA:war exploded" />
-      <element id="javaee-facet-resources" facet="main/web/Web" />
-      <element id="directory" name="WEB-INF">
-        <element id="directory" name="classes">
-          <element id="module-output" name="main" />
-        </element>
-        <element id="directory" name="lib">
-          <element id="library" level="project" name="lib" />
-          <element id="library" level="project" name="orm" />
-        </element>
-      </element>
     </root>
   </artifact>
 </component>
