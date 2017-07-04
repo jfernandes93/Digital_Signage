@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="resources:ormmapping:hibernate.cfg.xml/Hibernate">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="digitalsignage">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sakila"/>
+    <schema id="7" parent="1" name="sys"/>
+    <schema id="8" parent="1" name="world"/>
+    <table id="9" parent="2" name="canal"/>
+    <table id="10" parent="2" name="cliente"/>
+    <table id="11" parent="2" name="conteudo"/>
+    <table id="12" parent="2" name="coordenada"/>
+    <table id="13" parent="2" name="player"/>
+    <table id="14" parent="2" name="rede"/>
+    <table id="15" parent="2" name="tipo"/>
+    <column id="16" parent="9" name="idCanal">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="17" parent="9" name="Descricao">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="18" parent="9" name="Nome">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="19" parent="9" name="ClienteID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="20" parent="9" name="FK_68pvawk4qp2cgi0lsa4750w77">
+      <ColNames>ClienteID</ColNames>
+    </index>
+    <key id="21" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idCanal</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="22" parent="9" name="FK_68pvawk4qp2cgi0lsa4750w77">
+      <ColNames>ClienteID</ColNames>
+      <RefSchemaName>digitalsignage</RefSchemaName>
+      <RefTableName>cliente</RefTableName>
+      <RefColNames>idCliente</RefColNames>
+    </foreign-key>
+    <column id="23" parent="10" name="idCliente">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="24" parent="10" name="Email">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="25" parent="10" name="NIF">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="26" parent="10" name="Nome">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="27" parent="10" name="Password">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="28" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idCliente</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="11" name="idConteudo">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="11" name="CanalID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="31" parent="11" name="TipoID">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="32" parent="11" name="FK_asugo312lua2gxlsf1kgt6gp4">
+      <ColNames>CanalID</ColNames>
+    </index>
+    <index id="33" parent="11" name="FK_ne9rn9e8ur4v0rsc8kutqjgpd">
+      <ColNames>TipoID</ColNames>
+    </index>
+    <key id="34" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idConteudo</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="35" parent="11" name="FK_asugo312lua2gxlsf1kgt6gp4">
+      <ColNames>CanalID</ColNames>
+      <RefSchemaName>digitalsignage</RefSchemaName>
+      <RefTableName>canal</RefTableName>
+      <RefColNames>idCanal</RefColNames>
+    </foreign-key>
+    <foreign-key id="36" parent="11" name="FK_ne9rn9e8ur4v0rsc8kutqjgpd">
+      <ColNames>TipoID</ColNames>
+      <RefSchemaName>digitalsignage</RefSchemaName>
+      <RefTableName>tipo</RefTableName>
+      <RefColNames>idTipo</RefColNames>
+    </foreign-key>
+    <column id="37" parent="12" name="idCoordenada">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="38" parent="12" name="Latitude">
+      <Position>2</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="12" name="Longitude">
+      <Position>3</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="40" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idCoordenada</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="41" parent="13" name="idPlayer">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="42" parent="13" name="Descricao">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="43" parent="13" name="Estado">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="44" parent="13" name="Latitude">
+      <Position>4</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="13" name="Longitude">
+      <Position>5</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="13" name="Nome">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="47" parent="13" name="Tamanho">
+      <Position>7</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="13" name="CanalID">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="49" parent="13" name="RedeID">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="50" parent="13" name="FK_3po6g357hgobh4msvgv1dvt4y">
+      <ColNames>CanalID</ColNames>
+    </index>
+    <index id="51" parent="13" name="FK_n9dvu6m1cjufj54ljcd0awr7r">
+      <ColNames>RedeID</ColNames>
+    </index>
+    <key id="52" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idPlayer</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="13" name="FK_3po6g357hgobh4msvgv1dvt4y">
+      <ColNames>CanalID</ColNames>
+      <RefSchemaName>digitalsignage</RefSchemaName>
+      <RefTableName>canal</RefTableName>
+      <RefColNames>idCanal</RefColNames>
+    </foreign-key>
+    <foreign-key id="54" parent="13" name="FK_n9dvu6m1cjufj54ljcd0awr7r">
+      <ColNames>RedeID</ColNames>
+      <RefSchemaName>digitalsignage</RefSchemaName>
+      <RefTableName>rede</RefTableName>
+      <RefColNames>idRede</RefColNames>
+    </foreign-key>
+    <column id="55" parent="14" name="idRede">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="56" parent="14" name="Descricao">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="57" parent="14" name="Nome">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="58" parent="14" name="ClienteID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="59" parent="14" name="FK_9p8p8sueg0yfryifcg2qc29jw">
+      <ColNames>ClienteID</ColNames>
+    </index>
+    <key id="60" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idRede</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="61" parent="14" name="FK_9p8p8sueg0yfryifcg2qc29jw">
+      <ColNames>ClienteID</ColNames>
+      <RefSchemaName>digitalsignage</RefSchemaName>
+      <RefTableName>cliente</RefTableName>
+      <RefColNames>idCliente</RefColNames>
+    </foreign-key>
+    <column id="62" parent="15" name="idTipo">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="63" parent="15" name="Descricao">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="64" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idTipo</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
