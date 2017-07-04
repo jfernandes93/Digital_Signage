@@ -30,6 +30,5 @@ License Type: Academic
 		<mapping class="models.Tipo" />
                 <mapping class="models.Canal" />
                 <mapping class="models.Player" />
-                <mapping class="models.Coordenada" />
 	</session-factory>
 </hibernate-configuration>
